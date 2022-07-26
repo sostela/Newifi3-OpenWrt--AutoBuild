@@ -86,9 +86,9 @@ CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
 EOF
 
 # 固件压缩:
-cat >> .config <<EOF
-CONFIG_TARGET_IMAGES_GZIP=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_TARGET_IMAGES_GZIP=y
+#EOF
 
 # 无线驱动(开源)
 cat >> .config <<EOF
