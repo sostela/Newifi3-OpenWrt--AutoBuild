@@ -77,7 +77,7 @@ touch ./.config
 cat >> .config <<EOF
 CONFIG_HAS_TESTING_KERNEL=y
 CONFIG_TESTING_KERNEL=y
-CONFIG_LINUX_5_15=y
+CONFIG_LINUX_5_10=y
 EOF
 
 # 编译固件:
