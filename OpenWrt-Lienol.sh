@@ -9,8 +9,8 @@ cd openwrt
 # 更新feeds文件
 #sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 #sed -i '$a src-git Boos4721 https://github.com/Boos4721/OpenWrt-Packages' feeds.conf.default
 cat feeds.conf.default
 
@@ -92,7 +92,21 @@ EOF
 
 # 无线驱动(开源)
 cat >> .config <<EOF
-CONFIG_PACKAGE_kmod-mt76=y
+#CONFIG_PACKAGE_kmod-mt76=y
+CONFIG_PACKAGE_luci-app-mtwifi=n
+#CONFIG_PACKAGE_wireless-regdb=y
+#CONFIG_PACKAGE_kmod-cfg80211=y
+#CONFIG_PACKAGE_kmod-mac80211=y
+#CONFIG_PACKAGE_MAC80211_DEBUGFS=y
+#CONFIG_PACKAGE_MAC80211_MESH=y
+# use opensource wifi driver
+CONFIG_PACKAGE_kmod-mt7603=y
+CONFIG_PACKAGE_kmod-mt7603e=n
+CONFIG_PACKAGE_kmod-mt76x2=y
+CONFIG_PACKAGE_kmod-mt76x2e=n
+CONFIG_PACKAGE_hostapd-common=y
+CONFIG_PACKAGE_wpad-openssl=y
+CONFIG_PACKAGE_wpa-supplicant=y
 EOF
 
 # IPv6支持:
