@@ -75,6 +75,12 @@ touch ./.config
 #CONFIG_LINUX_5_4=y
 #EOF
 
+#语言
+cat >> .config <<EOF
+CONFIG_LUCI_LANG_en
+CONFIG_LUCI_LANG_zh_Hans=y
+EOF
+
 # 编译固件:
 cat >> .config <<EOF
 CONFIG_TARGET_ramips=y
@@ -119,7 +125,7 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-CONFIG_PACKAGE_luci-app-clash=y
+#CONFIG_PACKAGE_luci-app-clash=y
 #CONFIG_PACKAGE_luci-app-luci-app-vssr=y
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
@@ -139,8 +145,8 @@ EOF
 #EOF
 
 # Passwall插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-passwall2=y
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-passwall2=y
 #CONFIG_PACKAGE_https-dns-proxy=y
 #CONFIG_PACKAGE_naiveproxy=y
 #CONFIG_PACKAGE_kcptun-client=y
@@ -148,10 +154,11 @@ CONFIG_PACKAGE_luci-app-passwall2=y
 #CONFIG_PACKAGE_brook=y
 #CONFIG_PACKAGE_trojan-go=y
 #CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
-EOF
+#EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
+CONFIG_PACKAGE_lluci-i18n-base-zh-cn=y
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 CONFIG_PACKAGE_luci-app-guest-wifi=y
 #CONFIG_PACKAGE_luci-app-ttyd=y
@@ -176,7 +183,7 @@ CONFIG_PACKAGE_automount=y
 CONFIG_PACKAGE_luci-app-watchcat=y
 #CONFIG_PACKAGE_luci-app-zerotier=y
 #CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
-CONFIG_PACKAGE_luci-app-turboacc=y #开源 Linux Flow Offload 驱动
+#CONFIG_PACKAGE_luci-app-turboacc=y #开源 Linux Flow Offload 驱动
 #CONFIG_PACKAGE_luci-app-haproxy-tcp is not set #Haproxy负载均衡
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 #CONFIG_PACKAGE_luci-app-transmission is not set #TR离线下载
