@@ -75,10 +75,17 @@ touch ./.config
 # ========================固件定制部分========================
 # 
 
-# 选择内核:
-#cat >> .config <<EOF
-#CONFIG_LINUX_5_4=y
-#EOF
+cat >> .config <<EOF
+CONFIG_HAS_TESTING_KERNEL=y
+CONFIG_TESTING_KERNEL=y
+CONFIG_LINUX_5_15=y
+EOF
+
+#语言
+cat >> .config <<EOF
+CONFIG_LUCI_LANG_en
+CONFIG_LUCI_LANG_zh_Hans=y
+EOF
 
 # 编译固件:
 cat >> .config <<EOF
@@ -169,6 +176,7 @@ EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
+CONFIG_PACKAGE_lluci-i18n-base-zh-cn=y
 #CONFIG_PACKAGE_luci-app-ttyd=y
 #CONFIG_PACKAGE_luci-app-easymesh=n
 #CONFIG_PACKAGE_luci-app-smartdns=y
