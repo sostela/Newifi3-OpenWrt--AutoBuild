@@ -23,6 +23,7 @@ cat feeds.conf.default
 #rm -rf ./package/lean/UnblockNeteaseMusic
 #rm -rf ./package/lean/UnblockNeteaseMusic-Go
 #rm -rf ./package/lean/luci-app-unblockmusic
+rm -rf ./feeds/packages/net/mosdns && cp -r -f ./feeds/smpackage/mosdns ./feeds/packages/net/mosdns
 
 # 添加第三方软件包
 #git clone https://github.com/kenzok8/small-package package/small-package
@@ -75,11 +76,11 @@ touch ./.config
 # 
 
 # 选择内核:
-cat >> .config <<EOF
-CONFIG_HAS_TESTING_KERNEL=y
-CONFIG_TESTING_KERNEL=y
-CONFIG_LINUX_5_15=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_HAS_TESTING_KERNEL=y
+#CONFIG_TESTING_KERNEL=y
+#CONFIG_LINUX_5_15=y
+#EOF
 
 # 编译固件:
 cat >> .config <<EOF
@@ -144,7 +145,7 @@ EOF
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 #CONFIG_PACKAGE_luci-app-clash=y
-#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
+CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 #CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
@@ -210,7 +211,7 @@ CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
 #CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 #CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 #CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
-#CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 #CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
 #CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
