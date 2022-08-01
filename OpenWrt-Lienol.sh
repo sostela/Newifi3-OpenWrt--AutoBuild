@@ -71,11 +71,11 @@ touch ./.config
 # 
 
 # 选择内核:
-cat >> .config <<EOF
-CONFIG_HAS_TESTING_KERNEL=y
-CONFIG_TESTING_KERNEL=y
-CONFIG_LINUX_5_15=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_HAS_TESTING_KERNEL=y
+#CONFIG_TESTING_KERNEL=y
+#CONFIG_LINUX_5_15=y
+#EOF
 
 #语言
 cat >> .config <<EOF
