@@ -29,7 +29,7 @@ cat feeds.conf.default
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #git clone https://github.com/hubbylei/luci-app-clash package/luci-app-clash
 #git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
@@ -78,10 +78,10 @@ touch ./.config
 #EOF
 
 #语言
-cat >> .config <<EOF
-CONFIG_LUCI_LANG_en
-CONFIG_LUCI_LANG_zh_Hans=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_LUCI_LANG_en
+#CONFIG_LUCI_LANG_zh_Hans=y
+#EOF
 
 # 编译固件:
 cat >> .config <<EOF
@@ -111,14 +111,14 @@ EOF
 #EOF
 
 # IPv6支持:
-cat >> .config <<EOF
-CONFIG_IPV6=y
-CONFIG_KERNEL_IPV6=y
-CONFIG_PACKAGE_ipv6helper=y
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ip6tables=y
-CONFIG_PACKAGE_iptables-mod-extra=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_IPV6=y
+#CONFIG_KERNEL_IPV6=y
+#CONFIG_PACKAGE_ipv6helper=y
+#CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+#CONFIG_PACKAGE_ip6tables=y
+#CONFIG_PACKAGE_iptables-mod-extra=y
+#EOF
 
 # 多文件系统支持:
 # cat >> .config <<EOF
@@ -140,16 +140,16 @@ EOF
 # EOF
 
 # 第三方插件选择:
-cat >> .config <<EOF
+#cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 #CONFIG_PACKAGE_luci-app-clash=y
 #CONFIG_PACKAGE_luci-app-luci-app-vssr=y
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
+#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 #CONFIG_PACKAGE_AdGuardHome=y
-EOF
+#EOF
 
 # ShadowsocksR插件:
 #cat >> .config <<EOF
