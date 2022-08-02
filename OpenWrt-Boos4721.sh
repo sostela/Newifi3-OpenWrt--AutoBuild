@@ -82,10 +82,10 @@ touch ./.config
 #EOF
 
 #语言
-cat >> .config <<EOF
-CONFIG_LUCI_LANG_en
-CONFIG_LUCI_LANG_zh_Hans=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_LUCI_LANG_en
+#CONFIG_LUCI_LANG_zh_Hans=y
+#EOF
 
 # 编译固件:
 cat >> .config <<EOF
@@ -114,13 +114,13 @@ EOF
 #EOF
 
 # IPv6支持:
-cat >> .config <<EOF
-CONFIG_IPV6=y
-CONFIG_KERNEL_IPV6=y
-CONFIG_PACKAGE_ipv6helper=y
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ip6tables=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_IPV6=y
+#CONFIG_KERNEL_IPV6=y
+#CONFIG_PACKAGE_ipv6helper=y
+#CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+#CONFIG_PACKAGE_ip6tables=y
+#EOF
 
 # 多文件系统支持:
 # cat >> .config <<EOF
@@ -176,10 +176,11 @@ EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
-CONFIG_PACKAGE_lluci-i18n-base-zh-cn=y
+#CONFIG_PACKAGE_lluci-i18n-base-zh-cn=y
 #CONFIG_PACKAGE_luci-app-ttyd=y
 #CONFIG_PACKAGE_luci-app-easymesh=n
 #CONFIG_PACKAGE_luci-app-smartdns=y
+CONFIG_PACKAGE_luci-app-mosdns=y
 #CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 #CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-vlmcsd=n #KMS激活服务器
