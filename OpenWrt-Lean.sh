@@ -23,7 +23,7 @@ cat feeds.conf.default
 #rm -rf ./package/lean/UnblockNeteaseMusic
 #rm -rf ./package/lean/UnblockNeteaseMusic-Go
 #rm -rf ./package/lean/luci-app-unblockmusic
-rm -rf ./feeds/packages/net/mosdns && cp -r -f ./feeds/smpackage/mosdns ./feeds/packages/net/mosdns
+#rm -rf ./feeds/packages/net/mosdns && cp -r -f ./feeds/smpackage/mosdns ./feeds/packages/net/mosdns
 
 # 添加第三方软件包
 #git clone https://github.com/kenzok8/small-package package/small-package
@@ -31,7 +31,7 @@ rm -rf ./feeds/packages/net/mosdns && cp -r -f ./feeds/smpackage/mosdns ./feeds/
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-#git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #git clone https://github.com/hubbylei/luci-app-clash package/luci-app-clash
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
@@ -95,31 +95,31 @@ EOF
 #EOF
 
 # 无线驱动(开源)
-cat >> .config <<EOF
+#cat >> .config <<EOF
 #CONFIG_PACKAGE_kmod-mt76=y
-CONFIG_PACKAGE_luci-app-mtwifi=n
-CONFIG_PACKAGE_wireless-regdb=y
-CONFIG_PACKAGE_kmod-cfg80211=y
-CONFIG_PACKAGE_kmod-mac80211=y
-CONFIG_PACKAGE_MAC80211_DEBUGFS=y
-CONFIG_PACKAGE_MAC80211_MESH=y
+#CONFIG_PACKAGE_luci-app-mtwifi=n
+#CONFIG_PACKAGE_wireless-regdb=y
+#CONFIG_PACKAGE_kmod-cfg80211=y
+#CONFIG_PACKAGE_kmod-mac80211=y
+#CONFIG_PACKAGE_MAC80211_DEBUGFS=y
+#CONFIG_PACKAGE_MAC80211_MESH=y
 # use opensource wifi driver
-CONFIG_PACKAGE_kmod-mt7603=y
-CONFIG_PACKAGE_kmod-mt7603e=n
-CONFIG_PACKAGE_kmod-mt76x2=y
-CONFIG_PACKAGE_kmod-mt76x2-common=y
-CONFIG_PACKAGE_kmod-mt76x2e=n
-CONFIG_PACKAGE_wpad-openssl=y
-CONFIG_PACKAGE_wpa-supplicant=y
-EOF
+#CONFIG_PACKAGE_kmod-mt7603=y
+#CONFIG_PACKAGE_kmod-mt7603e=n
+#CONFIG_PACKAGE_kmod-mt76x2=y
+#CONFIG_PACKAGE_kmod-mt76x2-common=y
+#CONFIG_PACKAGE_kmod-mt76x2e=n
+#CONFIG_PACKAGE_wpad-openssl=y
+#CONFIG_PACKAGE_wpa-supplicant=y
+#EOF
 
 # IPv6支持:
 cat >> .config <<EOF
 CONFIG_IPV6=y
 CONFIG_KERNEL_IPV6=y
 CONFIG_PACKAGE_ipv6helper=y
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ip6tables=y
+#CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+#CONFIG_PACKAGE_ip6tables=y
 EOF
 
 # 多文件系统支持:
@@ -148,7 +148,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
+CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 #CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
@@ -180,7 +180,7 @@ CONFIG_PACKAGE_luci-app-guest-wifi=y
 #CONFIG_PACKAGE_luci-app-ttyd=y
 #CONFIG_PACKAGE_luci-app-easymesh=y
 #CONFIG_PACKAGE_luci-app-smartdns=y
-CONFIG_PACKAGE_luci-app-mosdns=y
+#CONFIG_PACKAGE_luci-app-mosdns=y
 #CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 #CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-vlmcsd=n #KMS激活服务器
