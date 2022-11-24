@@ -9,7 +9,7 @@ cd openwrt
 # 更新feeds文件
 #sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 #sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
-sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
+#sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
 #sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
 #sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
@@ -40,7 +40,7 @@ cat feeds.conf.default
 #git clone https://github.com/hubbylei/luci-app-clash package/luci-app-clash
 #git clone https://github.com/yang229/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-smartdns.git package/luci-app-smartdns
-#git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 #git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-openclash package/luci-app-openclash
 
 # 下载自定义软件
@@ -100,31 +100,31 @@ EOF
 #EOF
 
 # 无线驱动(开源)
-cat >> .config <<EOF
+#cat >> .config <<EOF
 #CONFIG_PACKAGE_kmod-mt76=y
-CONFIG_PACKAGE_luci-app-mtwifi=n
+#CONFIG_PACKAGE_luci-app-mtwifi=n
 #CONFIG_PACKAGE_wireless-regdb=y
 #CONFIG_PACKAGE_kmod-cfg80211=y
 #CONFIG_PACKAGE_kmod-mac80211=y
 #CONFIG_PACKAGE_MAC80211_DEBUGFS=y
 #CONFIG_PACKAGE_MAC80211_MESH=y
 # use opensource wifi driver
-CONFIG_PACKAGE_kmod-mt7603=y
-CONFIG_PACKAGE_kmod-mt7603e=n
-CONFIG_PACKAGE_kmod-mt76x2=y
-CONFIG_PACKAGE_kmod-mt76x2e=n
-CONFIG_PACKAGE_hostapd-common=y
-CONFIG_PACKAGE_wpad-openssl=y
-CONFIG_PACKAGE_wpa-supplicant=y
-EOF
+#CONFIG_PACKAGE_kmod-mt7603=y
+#CONFIG_PACKAGE_kmod-mt7603e=n
+#CONFIG_PACKAGE_kmod-mt76x2=y
+#CONFIG_PACKAGE_kmod-mt76x2e=n
+#CONFIG_PACKAGE_hostapd-common=y
+#CONFIG_PACKAGE_wpad-openssl=y
+#CONFIG_PACKAGE_wpa-supplicant=y
+#EOF
 
 # IPv6支持:
 cat >> .config <<EOF
 CONFIG_IPV6=y
 CONFIG_KERNEL_IPV6=y
 CONFIG_PACKAGE_ipv6helper=y
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ip6tables=y
+#CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+#CONFIG_PACKAGE_ip6tables=y
 EOF
 
 # 多文件系统支持:
@@ -147,30 +147,30 @@ EOF
 # EOF
 
 # 第三方插件选择:
-cat >> .config <<EOF
+#cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 #CONFIG_PACKAGE_luci-app-clash=y
-CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
+#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-luci-app-vssr=y
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 #CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 #CONFIG_PACKAGE_AdGuardHome=y
-EOF
+#EOF
 
 # ShadowsocksR插件:
-cat >> .config <<EOF
+#cat >> .config <<EOF
 #CONFIG_PACKAGE_xray=y
 #CONFIG_XRAY_EXCLUDE_ASSETS=y
 #CONFIG_XRAY_COMPRESS_UPX=y
 #CONFIG_v2ray-plugin_INCLUDE_GOPROXY=y
-CONFIG_PACKAGE_luci-app-ssr-plus=n
+#CONFIG_PACKAGE_luci-app-ssr-plus=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n
 #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=n
 #CONFIG_PACKAGE_luci-app-v2ray-server=n
-EOF
+#EOF
 
 # Passwall插件:
 #cat >> .config <<EOF
